@@ -1,38 +1,44 @@
-﻿var app = angular.module('webapp', ['ui.router']);
-
+﻿var app = angular.module('appdash', ["ui.bootstrap", "ui.router"]);
+"use strict";
 app.config(["$stateProvider", "$urlRouterProvider",
 	function ($stateProvider, $urlRouterProvider) {
-
-	    //$locationProvider.hashPrefix('!').html5Mode(true);
-	    //$locationProvider.html5Mode(true);
-
 	    $stateProvider
 		.state("home", {
 		    url: '/',
-		    templateUrl: '/home/Home',
-		    title: 'Home'
+		    templateUrl: '/Dashboard/Home',
+		    title: 'Dashboard Home'
 		})
-		.state("aboutus", {
-		    url: '/aboutus',
-		    templateUrl: "/home/aboutus",
-		    //controller: "MatchListCtrl",
-		    title: 'About Us'
+		.state("new_match", {
+		    url: '/new_match',
+		    templateUrl: "/Matches/NewMatch",
+		    controller: "MatchSaveCtrl",
+		    title: 'Add Matches'
 		})
-        .state("contactus", {
-            url: '/contactus',
-            templateUrl: "/home/contactus",
-            //controller: "MatchListCtrl",
-            title: 'Contact Us'
+        .state("list_match", {
+            url: '/list_match',
+            templateUrl: "/Matches/ListMatch",
+            controller: "MatchListCtrl",
+            title: 'All Matches'
         })
-        
+        .state("new_player", {
+            url: '/new_player',
+            templateUrl: "NewPlayer",
+            controller: "PlayerSaveCtrl",
+            title: ' Add Players'
+        })
+        //.state("signin",{
+		//	url:'/signin',
+		//	templateUrl: "Signin",
+
+		//	title:'Admin Login'			
+		//})
         .state("404", {
             url: '/404',
             template: '<h1>404...Page Not Found</h1>',
             title: 'Page Not Found'
         });
-	    $urlRouterProvider.when("", "/");
 	    $urlRouterProvider.otherwise('/404');
-	   
+	    $urlRouterProvider.when("", "/");
 	}]);
 
 app.run(['$state', '$rootScope', function ($state, $rootScope) {
@@ -43,5 +49,6 @@ app.run(['$state', '$rootScope', function ($state, $rootScope) {
         if (current.hasOwnProperty("title")) {
             $rootScope.title = current.title;
         }
+
     });
 }]);

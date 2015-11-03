@@ -105,7 +105,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\LoginStyle.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Site_Style.css">
+      <DependentUpon>Site_Style.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Site_Style.min.css">
+      <DependentUpon>Site_Style.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -120,17 +127,26 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\controllers\MatchCtrl.js" />
+    <Content Include="Scripts\App\controllers\PlayerCtrl.js" />
+    <Content Include="Scripts\App\directives\autoFocusDirective.js" />
+    <Content Include="Scripts\App\directives\datePickerDirective.js" />
+    <Content Include="Scripts\App\directives\invalidFocusDirective.js" />
     <Content Include="Scripts\App\directives\pwdVerifyDirective.js" />
     <Content Include="Scripts\App\services\MatchService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.13.2.min.js" />
     <Content Include="Web.config" />
@@ -140,7 +156,10 @@
     <Compile Include="API\MatchApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MatchesController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +172,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Dashboard\Home.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Matches\NewMatch.cshtml" />
+    <Content Include="Views\Matches\ListMatch.cshtml" />
+    <Content Include="Views\Players\NewPlayer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,7 +185,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Start\App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

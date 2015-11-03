@@ -1,0 +1,51 @@
+﻿
+<form name="NewMatchForm" role="form" class="form-horizontal" ng-submit="save(match)" ng-controller="MatchSaveCtrl" novalidate invalid-focus>
+    <div class="form-group">
+        <label for="ground" class="col-sm-2 control-label">Ground</label>
+        <div class="col-sm-6 col-md-4">
+            <input type="text" class="form-control" name="ground" ng-model="match.ground" placeholder="Ground" required>
+            <span class="text-danger" ng-show="NewMatchForm.$dirty && NewMatchForm.ground.$error.required">Ground Required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="city" class="col-sm-2 control-label">City</label>
+        <div class="col-sm-6 col-md-4">
+            <input type="text" class="form-control" name="city" ng-model="match.city" auto-focus="true" placeholder="City" required>
+            <span class="text-danger" ng-show="NewMatchForm.$dirty && NewMatchForm.city.$error.required">City Required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="result" class="col-sm-2 control-label">Result</label>
+        <div class="col-sm-6 col-md-4">
+            <input type="text" class="form-control" name="result" ng-model="match.result" placeholder="Result" required>
+            <span class="text-danger" ng-show="NewMatchForm.$dirty && NewMatchForm.result.$error.required">Result Required</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="matchdate" class="col-sm-2 control-label">Date</label>
+        <div class="col-sm-6 col-md-2" ng-controller="DatepickerCtrl">
+            <p class="input-group">
+                <input type="text" class="form-control" name="matchdate" datepicker-popup="dd/MMMM/yyyy" ng-model="match.date" is-open="status.opened" min-date="'2015-06-01'" max-date="'2015-08-31'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar "></i></button>
+                </span>
+            </p>
+            <span>{{match.date}}</span>
+            <div ng-bind="submitMsg"></div>
+            @*<span class="text-danger" ng-show="NewMatchForm.$dirty && NewMatchForm.matchdate.$invalid">Invalid date</span>   *@
+            <span class="text-danger" ng-show="NewMatchForm.$dirty && NewMatchForm.matchdate.$error.required">Date Required</span>
+            @*<span class="text-danger" ng-show="NewMatchForm.$dirty && NewMatchForm.matchdate.$error.date">Not a valid date!</span> *@
+        </div>
+
+
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-save"></i>&nbsp;Save
+            </button>
+        </div>
+    </div>
+</form>
+
