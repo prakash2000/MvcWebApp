@@ -7,6 +7,10 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using MvcWebApp.DomainModel;
+using MvcWebApp.DAL;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace MvcWebApp
 {
@@ -17,7 +21,12 @@ namespace MvcWebApp
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Database.SetInitializer<DataContext>(new DataContext());
+            DataContext context = new DataContext();
+            context.Database.Initialize(true);
+
         }
     }
 }

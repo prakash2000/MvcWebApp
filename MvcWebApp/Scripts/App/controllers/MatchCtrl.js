@@ -13,27 +13,48 @@
 //     .module('ashes2015')
 //     .controller('MatchListCtrl','ListCtrl');
 // }());
-app.controller("MatchListCtrl", function($scope) {     
-  $scope.Allmatches = [
-    { place: {city:"Cardiff",ground:'Sofia Gardens'},    date: "8th-12th July",  result:"England Won"},
-    { place: "Lords",      date: "16th-20th July", result:"Australia Won" },   
-    { place: "Edgebaston", date: "29th-26th July", result: "NA" },
-    { place: "Yorkshire",  date: "29th-2nd August",result:"England Won" },
-    { place: "Manchester", date: "5th-9th August", result:"England Won" }   
-  ];
+app.controller("MatchListCtrl", function ($scope) {
+    $scope.Allmatches = [
+      { place: { city: "Cardiff", ground: 'Sofia Gardens' }, date: "8th-12th July", result: "England Won" },
+      { place: "Lords", date: "16th-20th July", result: "Australia Won" },
+      { place: "Edgebaston", date: "29th-26th July", result: "NA" },
+      { place: "Yorkshire", date: "29th-2nd August", result: "England Won" },
+      { place: "Manchester", date: "5th-9th August", result: "England Won" }
+    ];
 });
-app.controller("MatchSaveCtrl", ["$scope","matchService",function ($scope,matchService) {
-    $scope.save = function (user) {        
+
+
+var listController = ["$scope", "matchService",
+    function ($scope, matchService) {
+        $scope.rowCollection = [];
+        $scope.matches = [];
+
+        matchService
+            .get()
+            .then(function (matches) {
+                $scope.rowCollection = matches;
+                $scope.matches = [].concat($scope.rowCollection);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }];
+app.controller("MatchSaveCtrl", ["$scope", "matchService", function ($scope, matchService) {
+    $scope.save = function (match) {
         if ($scope.NewMatchForm.$valid) {
-            console.log(user);
+            debugger;
             matchService
-                        .save(user)
+                        .save(match)
                         .then(function (res) {
                             if (res.hasError) {
                                 $scope.hasError = res.hasError;
                                 $scope.error = res.status;
+                                $scope.submitMsg = "Match not Added.Something went Wrong!!";
                             } else {
-                                $modalInstance.close({ id: res.id, name: gender.name });
+                                // $modalInstance.close({ id: res.id, name: gender.name                                
+                                console.log(res)
+                                $scope.match = {};
+                                $scope.submitMsg = "New Match Added Successfully";
                             }
                         })
                         .catch(function (error) {
@@ -44,7 +65,7 @@ app.controller("MatchSaveCtrl", ["$scope","matchService",function ($scope,matchS
             $scope.NewMatchForm.$setDirty();
     };
 }]);
-app.controller('DatepickerDemoCtrl', function ($scope) {
+app.controller('DatepickerCtrl', function ($scope) {
     $scope.today = function () {
         $scope.dt = new Date();
     };
@@ -65,6 +86,8 @@ app.controller('DatepickerDemoCtrl', function ($scope) {
     $scope.toggleMin();
 
     $scope.open = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
         $scope.status.opened = true;
     };
 
@@ -112,3 +135,8 @@ app.controller('DatepickerDemoCtrl', function ($scope) {
         return '';
     };
 });
+
+angular
+        .module("appdash")
+        .service("matchListCtrl", listController);
+

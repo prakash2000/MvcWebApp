@@ -1,3 +1,26 @@
-﻿
-<div ui-view></div>
+﻿@{
+    Layout = null;
+}
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignIn</title>
+    <link href="~/Content/LoginStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div class="login_form">
+        <h2>Login to your account</h2>
+        <form action="@Url.Action("Index","Dashboard")">
+            <div class="login_inner">
+                <input type="text" title="Username" placeholder="username" required="required" />
+                <input type="password" title="Password" placeholder="password" required="required" />
+                <label class="login_error display_none">* username and password not mach</label>
+                <button type="submit" class="btn"><span>Login</span></button>
+            </div>
+        </form>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,5 @@
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.Model\bin\Debug\MvcWebApp.Model.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.Model\bin\Debug\MvcWebApp.Model.pdb
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.Model\obj\Debug\MvcWebApp.DomainModel.csprojResolveAssemblyReference.cache
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.Model\obj\Debug\MvcWebApp.Model.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.Model\obj\Debug\MvcWebApp.Model.pdb

@@ -1,0 +1,12 @@
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\MvcWebApp.DAL.dll.config
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\MvcWebApp.DAL.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\MvcWebApp.DAL.pdb
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\EntityFramework.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\MvcWebApp.Model.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\MvcWebApp.Model.pdb
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\EntityFramework.xml
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\obj\Debug\MvcWebApp.DAL.csprojResolveAssemblyReference.cache
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\obj\Debug\MvcWebApp.DAL.dll
+D:\Prakash\Works\Projects2015\MvcWebApp\MvcWebApp.DAL\obj\Debug\MvcWebApp.DAL.pdb
