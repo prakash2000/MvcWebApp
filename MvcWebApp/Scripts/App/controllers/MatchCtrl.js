@@ -42,7 +42,10 @@ var listController = ["$scope", "matchService",
 app.controller("MatchSaveCtrl", ["$scope", "matchService", function ($scope, matchService) {
     $scope.save = function (match) {
         if ($scope.NewMatchForm.$valid) {
+<<<<<<< HEAD
             debugger;
+=======
+>>>>>>> origin/master
             matchService
                         .save(match)
                         .then(function (res) {
@@ -53,7 +56,11 @@ app.controller("MatchSaveCtrl", ["$scope", "matchService", function ($scope, mat
                             } else {
                                 // $modalInstance.close({ id: res.id, name: gender.name                                
                                 console.log(res)
+<<<<<<< HEAD
                                 $scope.match = {};
+=======
+                                $scope.user = {};
+>>>>>>> origin/master
                                 $scope.submitMsg = "New Match Added Successfully";
                             }
                         })

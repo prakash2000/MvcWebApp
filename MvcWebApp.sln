@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWebApp.DAL", "MvcWebApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWebApp.DomainModel", "MvcWebApp.Model\MvcWebApp.DomainModel.csproj", "{261B30CC-5529-45F2-9B32-9A0F0A719329}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWebApp.DAL", "MvcWebApp.DAL\MvcWebApp.DAL.csproj", "{72EFBB12-4460-47FF-8BF7-1BB6D5FAD7BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +25,13 @@ Global
 		{72EFBB12-4460-47FF-8BF7-1BB6D5FAD7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72EFBB12-4460-47FF-8BF7-1BB6D5FAD7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72EFBB12-4460-47FF-8BF7-1BB6D5FAD7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{261B30CC-5529-45F2-9B32-9A0F0A719329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{261B30CC-5529-45F2-9B32-9A0F0A719329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261B30CC-5529-45F2-9B32-9A0F0A719329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261B30CC-5529-45F2-9B32-9A0F0A719329}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> origin/master
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
